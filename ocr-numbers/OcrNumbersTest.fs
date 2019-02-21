@@ -69,7 +69,7 @@ let ``Garbled numbers in a string are replaced with ?`` () =
           "                           " ]
     convert rows |> should equal (Some "11?10?1?0")
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Recognizes 2`` () =
     let rows = 
         [ " _ ";
@@ -78,7 +78,7 @@ let ``Recognizes 2`` () =
           "   " ]
     convert rows |> should equal (Some "2")
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Recognizes 3`` () =
     let rows = 
         [ " _ ";
@@ -87,7 +87,7 @@ let ``Recognizes 3`` () =
           "   " ]
     convert rows |> should equal (Some "3")
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Recognizes 4`` () =
     let rows = 
         [ "   ";
@@ -96,7 +96,7 @@ let ``Recognizes 4`` () =
           "   " ]
     convert rows |> should equal (Some "4")
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Recognizes 5`` () =
     let rows = 
         [ " _ ";
@@ -105,7 +105,7 @@ let ``Recognizes 5`` () =
           "   " ]
     convert rows |> should equal (Some "5")
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Recognizes 6`` () =
     let rows = 
         [ " _ ";
@@ -114,7 +114,7 @@ let ``Recognizes 6`` () =
           "   " ]
     convert rows |> should equal (Some "6")
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Recognizes 7`` () =
     let rows = 
         [ " _ ";
@@ -123,7 +123,7 @@ let ``Recognizes 7`` () =
           "   " ]
     convert rows |> should equal (Some "7")
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Recognizes 8`` () =
     let rows = 
         [ " _ ";
@@ -132,7 +132,7 @@ let ``Recognizes 8`` () =
           "   " ]
     convert rows |> should equal (Some "8")
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Recognizes 9`` () =
     let rows = 
         [ " _ ";
@@ -141,7 +141,7 @@ let ``Recognizes 9`` () =
           "   " ]
     convert rows |> should equal (Some "9")
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Recognizes string of decimal numbers`` () =
     let rows = 
         [ "    _  _     _  _  _  _  _  _ ";
@@ -150,7 +150,7 @@ let ``Recognizes string of decimal numbers`` () =
           "                              " ]
     convert rows |> should equal (Some "1234567890")
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Numbers separated by empty lines are recognized. Lines are joined by commas.`` () =
     let rows = 
         [ "    _  _ ";

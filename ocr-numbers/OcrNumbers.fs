@@ -1,26 +1,39 @@
 module OcrNumbers
 
 let convert (input:string list) =
-    if List.length input <> 4 then
+    if (input |> List.length) % 4 <> 0 then
         None
-    elif (input |> List.forall (fun s -> s.Length % 3 <> 0)) then
+    elif input |> List.forall (fun s -> s.Length % 3 <> 0) then
         None
     else
-        let getNumberText (input:string list) index =
+        let getNumberAtIndex (input:string list) index =
             let startIndex, endIndex = (index * 3, (index * 3) + 2)
             input |> List.map (fun s -> s.[startIndex..endIndex])
-        let getNumberMatch input =
-            let space3 = "   "
+        let matchNumber input =
             let numbers =
-                [ ('0', [ " _ "; "| |"; "|_|"; space3 ])
-                  ('1', [ space3; "  |"; "  |"; space3 ]) ]
+                [ ('0', [ " _ "; "| |"; "|_|"; "   " ])
+                  ('1', [ "   "; "  |"; "  |"; "   " ])
+                  ('2', [ " _ "; " _|"; "|_ "; "   " ])
+                  ('3', [ " _ "; " _|"; " _|"; "   " ])
+                  ('4', [ "   "; "|_|"; "  |"; "   " ])
+                  ('5', [ " _ "; "|_ "; " _|"; "   " ])
+                  ('6', [ " _ "; "|_ "; "|_|"; "   " ])
+                  ('7', [ " _ "; "  |"; "  |"; "   " ])
+                  ('8', [ " _ "; "|_|"; "|_|"; "   " ])
+                  ('9', [ " _ "; "|_|"; " _|"; "   " ]) ]
             let number = numbers |> List.tryFind(fun (_, list) -> list = input)
             match number with
             | None -> '?'
             | Some (s, _) -> s
-        let getNumberTextMatch = getNumberText input >> getNumberMatch
-        let result = 
+        let getNumberAndMatch input = getNumberAtIndex input >> matchNumber
+        let getNumbers (input:string list) = 
             [ 0 .. (input.[0].Length / 3) - 1]
-            |> List.map getNumberTextMatch
+            |> List.map (getNumberAndMatch input)
             |> List.toArray
-        Some (System.String.Concat(result))
+            |> System.String.Concat
+        let result =
+            input
+            |> List.chunkBySize 4
+            |> List.map getNumbers
+            |> String.concat ","
+        Some (result)
