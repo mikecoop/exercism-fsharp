@@ -20,45 +20,34 @@ let children t =
     | Branch (_, c) -> c
     | _ -> []
 
+let validateRecords records =
+    match records with
+    | [ ] ->
+        failwith "Empty input"
+    | x :: _ when x.RecordId <> 0 ->
+        failwith "No root node"
+    | x :: _ when x.ParentId <> 0 ->
+        failwith "Root node has parent"
+    | _ :: xs when xs |> List.exists (fun r -> r.RecordId < r.ParentId) ->
+        failwith "ParentId should be less than RecordId"
+    | _ :: xs when xs |> List.exists (fun r -> r.RecordId = r.ParentId) ->
+        failwith "ParentId cannot be the RecordId except for the root node."
+    | records when (records |> List.map (fun r -> r.RecordId) |> List.max) > (List.length records - 1) ->
+        failwith "Ids are not continuous"
+    | _ -> records
+
+let rec makeTree id map =
+    match map |> Map.tryFind id with
+    | None ->
+        Leaf id
+    | Some list ->
+        Branch (id, list |> List.map (fun r -> makeTree r.RecordId map))
+
 let buildTree records = 
-    let records' = List.sortBy (fun x -> x.RecordId) records
-
-    if List.isEmpty records' then failwith "Empty input"
-    else
-        let root = records'.[0]
-        if (root.ParentId = 0 |> not) then
-            failwith "Root node is invalid"
-        else
-            if (root.RecordId = 0 |> not) then failwith "Root node is invalid"
-            else
-                let mutable prev = -1
-                let mutable leafs = []
-
-                for r in records' do
-                    if (r.RecordId <> 0 && (r.ParentId > r.RecordId || r.ParentId = r.RecordId)) then
-                        failwith "Nodes with invalid parents"
-                    else
-                        if r.RecordId <> prev + 1 then
-                            failwith "Non-continuous list"
-                        else                            
-                            prev <- r.RecordId
-                            if (r.RecordId = 0) then
-                                leafs <- (-1, r.RecordId) :: leafs
-                            else
-                                leafs <- (r.ParentId, r.RecordId) :: leafs
-
-                leafs <- List.rev leafs 
-                let root = leafs.[0]
-
-                let grouped = leafs |> List.groupBy fst |> List.map (fun (x, y) -> (x, List.map snd y))
-                let parens = List.map fst grouped
-                let map = grouped |> Map.ofSeq
-
-                let rec helper key =
-                    if Map.containsKey key map then
-                        Branch (key, List.map (fun i -> helper i) (Map.find key map))
-                    else
-                        Leaf key                    
-
-                let root = helper 0
-                root
+    records
+    |> List.sortBy (fun r -> r.RecordId)
+    |> validateRecords
+    |> List.tail
+    |> List.groupBy (fun r -> r.ParentId)
+    |> Map.ofList
+    |> makeTree 0
