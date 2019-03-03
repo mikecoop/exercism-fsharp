@@ -57,6 +57,10 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "ReverseString", "reverse-st
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "RnaTranscription", "rna-transcription\RnaTranscription.fsproj", "{69C92FF8-A81F-4C03-BA33-4BFA0F6BBF41}"
 EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "NucleotideCount", "nucleotide-count\NucleotideCount.fsproj", "{76EF3964-478A-44EE-9D95-1A6925C1FFE1}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Pangram", "pangram\Pangram.fsproj", "{51757802-C325-43C5-B4D0-E27439123C37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -171,6 +175,14 @@ Global
 		{69C92FF8-A81F-4C03-BA33-4BFA0F6BBF41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69C92FF8-A81F-4C03-BA33-4BFA0F6BBF41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69C92FF8-A81F-4C03-BA33-4BFA0F6BBF41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76EF3964-478A-44EE-9D95-1A6925C1FFE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76EF3964-478A-44EE-9D95-1A6925C1FFE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76EF3964-478A-44EE-9D95-1A6925C1FFE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76EF3964-478A-44EE-9D95-1A6925C1FFE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51757802-C325-43C5-B4D0-E27439123C37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51757802-C325-43C5-B4D0-E27439123C37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51757802-C325-43C5-B4D0-E27439123C37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51757802-C325-43C5-B4D0-E27439123C37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
