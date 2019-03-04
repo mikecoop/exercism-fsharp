@@ -67,6 +67,8 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Darts", "darts\Darts.fsproj
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "HighScores", "high-scores\HighScores.fsproj", "{87F2B5F7-C48E-4319-8899-469155AF0E1D}"
 EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Triangle", "triangle\Triangle.fsproj", "{F9FD1E21-DDA8-428C-927F-CDE58DA35AF8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -201,6 +203,10 @@ Global
 		{87F2B5F7-C48E-4319-8899-469155AF0E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87F2B5F7-C48E-4319-8899-469155AF0E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87F2B5F7-C48E-4319-8899-469155AF0E1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9FD1E21-DDA8-428C-927F-CDE58DA35AF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9FD1E21-DDA8-428C-927F-CDE58DA35AF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9FD1E21-DDA8-428C-927F-CDE58DA35AF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9FD1E21-DDA8-428C-927F-CDE58DA35AF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

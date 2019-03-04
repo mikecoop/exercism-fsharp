@@ -1,7 +1,24 @@
 ﻿module Triangle
 
-let equilateral triangle = failwith "You need to implement this function."
+let validTriangle triangle =
+    match triangle with
+    | [ x; y; z ] -> x + y > z && x + z > y && y + z > x
+    | _ -> false
 
-let isosceles triangle = failwith "You need to implement this function."
+let distinctSides n triangle =
+    let set = triangle |> Set.ofList
+    set.Count = n &&
+    set |> Set.forall (fun s -> s > 0.0)
 
-let scalene triangle = failwith "You need to implement this function."
+let equilateral triangle =
+    triangle |> validTriangle &&
+    triangle |> distinctSides 1
+
+let isosceles triangle =
+    triangle |> validTriangle &&
+    (triangle |> equilateral ||
+     triangle |> distinctSides 2)
+    
+let scalene triangle =
+    triangle |> validTriangle &&
+    triangle |> distinctSides 3
