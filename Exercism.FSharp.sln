@@ -109,6 +109,10 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Acronym", "acronym\Acronym.
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Matrix", "matrix\Matrix.fsproj", "{145BD0C2-C698-406F-B2A3-EFB5E5DC4AC6}"
 EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AllYourBase", "all-your-base\AllYourBase.fsproj", "{C75D71EB-5E01-46C9-913D-8ED4EE848CD9}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "LargestSeriesProduct", "largest-series-product\LargestSeriesProduct.fsproj", "{5E37D3CA-2EA3-43C2-AF36-614AD9CD217C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -327,6 +331,14 @@ Global
 		{145BD0C2-C698-406F-B2A3-EFB5E5DC4AC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{145BD0C2-C698-406F-B2A3-EFB5E5DC4AC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{145BD0C2-C698-406F-B2A3-EFB5E5DC4AC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C75D71EB-5E01-46C9-913D-8ED4EE848CD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C75D71EB-5E01-46C9-913D-8ED4EE848CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C75D71EB-5E01-46C9-913D-8ED4EE848CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C75D71EB-5E01-46C9-913D-8ED4EE848CD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E37D3CA-2EA3-43C2-AF36-614AD9CD217C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E37D3CA-2EA3-43C2-AF36-614AD9CD217C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E37D3CA-2EA3-43C2-AF36-614AD9CD217C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E37D3CA-2EA3-43C2-AF36-614AD9CD217C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
