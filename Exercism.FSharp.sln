@@ -95,6 +95,10 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "SecretHandshake", "secret-h
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "WordCount", "word-count\WordCount.fsproj", "{C36632E2-7E8D-466D-AF2A-5C7FB037B481}"
 EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "TwelveDays", "twelve-days\TwelveDays.fsproj", "{D4BC47B2-B02E-4C07-908E-AAF61833BEBD}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Meetup", "meetup\Meetup.fsproj", "{7D643DA6-EB83-4969-9E01-6E7012F86CD3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -285,6 +289,14 @@ Global
 		{C36632E2-7E8D-466D-AF2A-5C7FB037B481}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C36632E2-7E8D-466D-AF2A-5C7FB037B481}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C36632E2-7E8D-466D-AF2A-5C7FB037B481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4BC47B2-B02E-4C07-908E-AAF61833BEBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4BC47B2-B02E-4C07-908E-AAF61833BEBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4BC47B2-B02E-4C07-908E-AAF61833BEBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4BC47B2-B02E-4C07-908E-AAF61833BEBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D643DA6-EB83-4969-9E01-6E7012F86CD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D643DA6-EB83-4969-9E01-6E7012F86CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D643DA6-EB83-4969-9E01-6E7012F86CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D643DA6-EB83-4969-9E01-6E7012F86CD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
