@@ -105,6 +105,10 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Series", "series\Series.fsp
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "SimpleLinkedList", "simple-linked-list\SimpleLinkedList.fsproj", "{B83B67A9-B948-449C-84A8-CA60B77F5565}"
 EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Acronym", "acronym\Acronym.fsproj", "{C0B61AC3-A2F9-4963-814F-BE61DD2B31CE}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Matrix", "matrix\Matrix.fsproj", "{145BD0C2-C698-406F-B2A3-EFB5E5DC4AC6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -315,6 +319,14 @@ Global
 		{B83B67A9-B948-449C-84A8-CA60B77F5565}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B83B67A9-B948-449C-84A8-CA60B77F5565}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B83B67A9-B948-449C-84A8-CA60B77F5565}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0B61AC3-A2F9-4963-814F-BE61DD2B31CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0B61AC3-A2F9-4963-814F-BE61DD2B31CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0B61AC3-A2F9-4963-814F-BE61DD2B31CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0B61AC3-A2F9-4963-814F-BE61DD2B31CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{145BD0C2-C698-406F-B2A3-EFB5E5DC4AC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{145BD0C2-C698-406F-B2A3-EFB5E5DC4AC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{145BD0C2-C698-406F-B2A3-EFB5E5DC4AC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{145BD0C2-C698-406F-B2A3-EFB5E5DC4AC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
