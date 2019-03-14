@@ -119,6 +119,8 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "PythagoreanTriplet", "pytha
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "SaddlePoints", "saddle-points\SaddlePoints.fsproj", "{10050A0E-53AE-42FC-9500-593A2F5332A0}"
 EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "PascalsTriangle", "pascals-triangle\PascalsTriangle.fsproj", "{D50EC668-098D-48B4-A558-68581345852E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -357,6 +359,10 @@ Global
 		{10050A0E-53AE-42FC-9500-593A2F5332A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10050A0E-53AE-42FC-9500-593A2F5332A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10050A0E-53AE-42FC-9500-593A2F5332A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D50EC668-098D-48B4-A558-68581345852E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D50EC668-098D-48B4-A558-68581345852E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D50EC668-098D-48B4-A558-68581345852E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D50EC668-098D-48B4-A558-68581345852E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
