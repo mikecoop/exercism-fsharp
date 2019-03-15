@@ -125,6 +125,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ListOps", "list-ops\ListOps
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "PrimeFactors", "prime-factors\PrimeFactors.fsproj", "{4035FDAE-E771-4405-893A-C04DE936AA42}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "IsbnVerifier", "isbn-verifier\IsbnVerifier.fsproj", "{1CD5D37C-0DF6-40AA-8683-24401CE0DC32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -375,6 +377,10 @@ Global
 		{4035FDAE-E771-4405-893A-C04DE936AA42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4035FDAE-E771-4405-893A-C04DE936AA42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4035FDAE-E771-4405-893A-C04DE936AA42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CD5D37C-0DF6-40AA-8683-24401CE0DC32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CD5D37C-0DF6-40AA-8683-24401CE0DC32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CD5D37C-0DF6-40AA-8683-24401CE0DC32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CD5D37C-0DF6-40AA-8683-24401CE0DC32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
