@@ -123,6 +123,8 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "PascalsTriangle", "pascals-
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ListOps", "list-ops\ListOps.fsproj", "{4F19D3A8-956A-4E7C-8E58-978C8AB97265}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "PrimeFactors", "prime-factors\PrimeFactors.fsproj", "{4035FDAE-E771-4405-893A-C04DE936AA42}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -369,6 +371,10 @@ Global
 		{4F19D3A8-956A-4E7C-8E58-978C8AB97265}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F19D3A8-956A-4E7C-8E58-978C8AB97265}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F19D3A8-956A-4E7C-8E58-978C8AB97265}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4035FDAE-E771-4405-893A-C04DE936AA42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4035FDAE-E771-4405-893A-C04DE936AA42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4035FDAE-E771-4405-893A-C04DE936AA42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4035FDAE-E771-4405-893A-C04DE936AA42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
