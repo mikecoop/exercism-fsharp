@@ -127,6 +127,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "PrimeFactors", "prime-facto
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "IsbnVerifier", "isbn-verifier\IsbnVerifier.fsproj", "{1CD5D37C-0DF6-40AA-8683-24401CE0DC32}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RomanNumerals", "roman-numerals\RomanNumerals.fsproj", "{913F94CA-4DF7-4228-9274-E66D3DBC5869}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -381,6 +383,10 @@ Global
 		{1CD5D37C-0DF6-40AA-8683-24401CE0DC32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CD5D37C-0DF6-40AA-8683-24401CE0DC32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CD5D37C-0DF6-40AA-8683-24401CE0DC32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{913F94CA-4DF7-4228-9274-E66D3DBC5869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{913F94CA-4DF7-4228-9274-E66D3DBC5869}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{913F94CA-4DF7-4228-9274-E66D3DBC5869}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{913F94CA-4DF7-4228-9274-E66D3DBC5869}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
