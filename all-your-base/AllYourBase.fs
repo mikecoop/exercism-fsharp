@@ -4,7 +4,7 @@ let rebase (digits:int list) inputBase outputBase =
     let fromDecimal outputBase num =
         let rec innerFn num outputBase =
             match num / outputBase, num % outputBase with
-            | 0, r -> [ r ] 
+            | 0, r -> [ r ]
             | d, r -> r :: innerFn d outputBase
         if outputBase < 2 then
             None
@@ -16,8 +16,7 @@ let rebase (digits:int list) inputBase outputBase =
         else
             digits
             |> List.rev
-            |> List.indexed
-            |> List.map (fun (i, n) -> n * pown inputBase i)
+            |> List.mapi (fun i n -> n * pown inputBase i)
             |> List.sum
             |> Some
     let decimal = toDecimal inputBase digits
