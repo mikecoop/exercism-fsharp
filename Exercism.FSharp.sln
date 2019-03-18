@@ -131,6 +131,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RomanNumerals", "roman-nume
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ParallelLetterFrequency", "parallel-letter-frequency\ParallelLetterFrequency.fsproj", "{0B381B05-6E3F-42DD-ABB7-17223114BE37}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "LinkedList", "linked-list\LinkedList.fsproj", "{1261AD80-2CB9-4B56-B97A-08C1E6A4546F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -393,6 +395,10 @@ Global
 		{0B381B05-6E3F-42DD-ABB7-17223114BE37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B381B05-6E3F-42DD-ABB7-17223114BE37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B381B05-6E3F-42DD-ABB7-17223114BE37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1261AD80-2CB9-4B56-B97A-08C1E6A4546F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1261AD80-2CB9-4B56-B97A-08C1E6A4546F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1261AD80-2CB9-4B56-B97A-08C1E6A4546F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1261AD80-2CB9-4B56-B97A-08C1E6A4546F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
