@@ -133,6 +133,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ParallelLetterFrequency", "
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "LinkedList", "linked-list\LinkedList.fsproj", "{1261AD80-2CB9-4B56-B97A-08C1E6A4546F}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "DotDsl", "dot-dsl\DotDsl.fsproj", "{7708E7A9-D699-4B9E-9E79-8054186C8C81}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -399,6 +401,10 @@ Global
 		{1261AD80-2CB9-4B56-B97A-08C1E6A4546F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1261AD80-2CB9-4B56-B97A-08C1E6A4546F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1261AD80-2CB9-4B56-B97A-08C1E6A4546F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7708E7A9-D699-4B9E-9E79-8054186C8C81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7708E7A9-D699-4B9E-9E79-8054186C8C81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7708E7A9-D699-4B9E-9E79-8054186C8C81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7708E7A9-D699-4B9E-9E79-8054186C8C81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
