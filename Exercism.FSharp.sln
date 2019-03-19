@@ -137,6 +137,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "DotDsl", "dot-dsl\DotDsl.fs
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SimpleCipher", "simple-cipher\SimpleCipher.fsproj", "{9BA6AA61-5F1D-442D-9EB2-4229AFD27E3A}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RotationalCipher", "rotational-cipher\RotationalCipher.fsproj", "{0A2DAFDA-B5C3-4FEE-BAE1-939BD73E30FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -411,6 +413,10 @@ Global
 		{9BA6AA61-5F1D-442D-9EB2-4229AFD27E3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BA6AA61-5F1D-442D-9EB2-4229AFD27E3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BA6AA61-5F1D-442D-9EB2-4229AFD27E3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A2DAFDA-B5C3-4FEE-BAE1-939BD73E30FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A2DAFDA-B5C3-4FEE-BAE1-939BD73E30FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A2DAFDA-B5C3-4FEE-BAE1-939BD73E30FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A2DAFDA-B5C3-4FEE-BAE1-939BD73E30FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
