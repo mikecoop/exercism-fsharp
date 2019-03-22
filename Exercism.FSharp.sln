@@ -139,6 +139,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SimpleCipher", "simple-ciph
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RotationalCipher", "rotational-cipher\RotationalCipher.fsproj", "{0A2DAFDA-B5C3-4FEE-BAE1-939BD73E30FD}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ScaleGenerator", "scale-generator\ScaleGenerator.fsproj", "{50E807A9-731A-4E33-9921-205483CBCB08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -417,6 +419,10 @@ Global
 		{0A2DAFDA-B5C3-4FEE-BAE1-939BD73E30FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A2DAFDA-B5C3-4FEE-BAE1-939BD73E30FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A2DAFDA-B5C3-4FEE-BAE1-939BD73E30FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50E807A9-731A-4E33-9921-205483CBCB08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50E807A9-731A-4E33-9921-205483CBCB08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50E807A9-731A-4E33-9921-205483CBCB08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50E807A9-731A-4E33-9921-205483CBCB08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
