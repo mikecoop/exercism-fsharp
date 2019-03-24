@@ -149,6 +149,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Grep", "grep\Grep.fsproj", 
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CustomSet", "custom-set\CustomSet.fsproj", "{487F5E24-070E-4DB9-8EBB-5B9E42896B81}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CryptoSquare", "crypto-square\CryptoSquare.fsproj", "{DADBA746-C4C4-4F69-B93E-3102BE8ADC83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -447,6 +449,10 @@ Global
 		{487F5E24-070E-4DB9-8EBB-5B9E42896B81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{487F5E24-070E-4DB9-8EBB-5B9E42896B81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{487F5E24-070E-4DB9-8EBB-5B9E42896B81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DADBA746-C4C4-4F69-B93E-3102BE8ADC83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DADBA746-C4C4-4F69-B93E-3102BE8ADC83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DADBA746-C4C4-4F69-B93E-3102BE8ADC83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DADBA746-C4C4-4F69-B93E-3102BE8ADC83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
