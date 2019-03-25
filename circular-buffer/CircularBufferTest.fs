@@ -101,7 +101,7 @@ let ``Overwrite acts like write on non-full buffer`` () =
     let (val5, _) = read buffer4
     val5 |> should equal 2
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Overwrite replaces the oldest item on full buffer`` () =
     let buffer1 = mkCircularBuffer 2
     let buffer2 = write 1 buffer1
@@ -112,7 +112,7 @@ let ``Overwrite replaces the oldest item on full buffer`` () =
     let (val6, _) = read buffer5
     val6 |> should equal 3
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Overwrite replaces the oldest item remaining in buffer following a read`` () =
     let buffer1 = mkCircularBuffer 3
     let buffer2 = write 1 buffer1

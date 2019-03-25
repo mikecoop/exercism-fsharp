@@ -155,6 +155,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Ledger", "ledger\Ledger.fsp
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CircularBuffer", "circular-buffer\CircularBuffer.fsproj", "{386B697C-B11A-455C-BB79-16CBC12154B6}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Luhn", "luhn\Luhn.fsproj", "{E99B965F-49B9-467B-96D8-C8A5AFCE705F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -465,6 +467,10 @@ Global
 		{386B697C-B11A-455C-BB79-16CBC12154B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{386B697C-B11A-455C-BB79-16CBC12154B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{386B697C-B11A-455C-BB79-16CBC12154B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E99B965F-49B9-467B-96D8-C8A5AFCE705F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E99B965F-49B9-467B-96D8-C8A5AFCE705F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E99B965F-49B9-467B-96D8-C8A5AFCE705F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E99B965F-49B9-467B-96D8-C8A5AFCE705F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

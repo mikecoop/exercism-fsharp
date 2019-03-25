@@ -17,14 +17,20 @@ let write value buffer =
     if bufferIsFull buffer then
         failwith "Buffer is full"
     else
-        { buffer with Items = value :: buffer.Items}
+        let newestToOldest = value :: buffer.Items
+        { buffer with Items = newestToOldest }
 
 let forceWrite value buffer =
-    write value buffer
+    if bufferIsFull buffer then
+        let oldestToNewest = (buffer.Items |> List.rev) |> List.tail
+        let newestToOldest = (value :: (oldestToNewest |> List.rev))
+        { buffer with Items = newestToOldest }
+    else
+        write value buffer
 
 let read buffer =
     match buffer.Items |> List.rev with
     | [ ] ->
         failwith "Buffer is empty"
-    | head :: rest ->
-        head, { buffer with Items = rest |> List.rev }
+    | oldest :: oldestToNewest ->
+        oldest, { buffer with Items = oldestToNewest |> List.rev }
