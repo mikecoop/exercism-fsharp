@@ -161,6 +161,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BankAccount", "bank-account
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Markdown", "markdown\Markdown.fsproj", "{D4A3B8C0-2EA5-4CEB-B90E-4AB2263D6C8A}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RunLengthEncoding", "run-length-encoding\RunLengthEncoding.fsproj", "{74D8A43F-4644-43C6-945B-257F95BAAFCC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -483,6 +485,10 @@ Global
 		{D4A3B8C0-2EA5-4CEB-B90E-4AB2263D6C8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4A3B8C0-2EA5-4CEB-B90E-4AB2263D6C8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4A3B8C0-2EA5-4CEB-B90E-4AB2263D6C8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74D8A43F-4644-43C6-945B-257F95BAAFCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74D8A43F-4644-43C6-945B-257F95BAAFCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74D8A43F-4644-43C6-945B-257F95BAAFCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74D8A43F-4644-43C6-945B-257F95BAAFCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
