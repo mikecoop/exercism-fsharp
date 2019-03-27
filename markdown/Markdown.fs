@@ -20,26 +20,36 @@ let replaceInlineTags (line:string) =
     |> replaceWithTags "__" "strong"
     |> replaceWithTags "_" "em"
 
+let isListItem (line:string) =
+    line.StartsWith("* ")
+
+let isHeader (line:string) =
+    line.StartsWith "#"
+
+let parseLine (line:string) =
+    if isListItem line then
+        wrapWithTag "li" (replaceInlineTags line.[2..])
+    elif isHeader line then
+        replacePoundsWithHeaders line
+    else
+        wrapWithTag "p" (replaceInlineTags line)
+
+let parseLines (lines:string[]) =
+    let firstListItem =
+        match (lines |> Array.tryFindIndex isListItem) with
+        | Some index -> index
+        | None -> -1
+
+    let parsedLines =
+        lines
+        |> List.ofArray
+        |> List.mapi
+            (fun index line ->
+                if index = firstListItem then "<ul>" else ""
+                + parseLine line)
+
+    let isList = firstListItem <> -1
+    parsedLines @ if isList then [ "</ul>" ] else [ ]
+
 let rec parse (markdown: string) =
-   let mutable html = ""
-   let mutable isList = false
-
-   let lines = markdown.Split('\n')
-
-   for line in lines do
-       if line.StartsWith("* ") then
-           if not isList then
-               html <- html + "<ul>"
-               isList <- true
-
-           html <- html + wrapWithTag "li" (replaceInlineTags line.[2..])
-
-       elif line.StartsWith "#" then
-           html <- html + replacePoundsWithHeaders line
-       else
-           html <- html + wrapWithTag "p" (replaceInlineTags line)
-
-   if isList then
-       html <- html + "</ul>"
-
-   html
+    markdown.Split('\n') |> parseLines |> List.reduce (+)
