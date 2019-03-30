@@ -1,16 +1,5 @@
 ﻿module BookStore
 
-let counts list =
-    list |> List.countBy id
-
-let subtractOneOfEach list =
-    match list with
-    | [ ] -> [ ]
-    | _ ->
-        list
-        |> List.map (fun (value, count) -> value, count - 1)
-        |> List.filter (fun (_, count) -> count <> 0)
-
 let discount = function
     | 5 -> 0.75
     | 4 -> 0.80
@@ -18,17 +7,37 @@ let discount = function
     | 2 -> 0.95
     | _ -> 1.00
 
-let rec totalPrice acc list =
-    match list with
+let getBookCounts books =
+    books |> List.countBy id |> List.sortByDescending snd
+
+let removeOneOfEachBook bookCounts =
+    bookCounts
+    |> List.map (fun (bookNumber, count) -> bookNumber, count - 1)
+    |> List.filter (fun (_, count) -> count <> 0)
+
+let removeGroupOf groupCount bookCounts =
+    if List.length bookCounts < groupCount then
+        removeOneOfEachBook bookCounts
+    else
+        (bookCounts
+         |> List.take groupCount
+         |> removeOneOfEachBook )
+         @ (bookCounts |> List.skip groupCount)
+
+let rec totalPrice acc maxGroupSize bookCounts =
+    match bookCounts with
     | [ ] -> acc
     | _ ->
-        let uniqueCount = list |> List.length
-        let newAcc = acc + (float uniqueCount * 8.00 * discount uniqueCount)
-        let newList = list |> subtractOneOfEach
-        totalPrice newAcc newList
+        let uniqueBooks = min (bookCounts |> List.length) maxGroupSize
+        let newAcc = acc + (float uniqueBooks * 8.00 * discount uniqueBooks)
+        totalPrice newAcc uniqueBooks (bookCounts |> removeGroupOf uniqueBooks)
 
 let total books =
-    let pairs = counts books
-    totalPrice 0.0 pairs
-
-[1; 1; 2; 2; 3; 3; 4; 5] |> counts
+    let bookCounts = getBookCounts books
+    let prices =
+        [ for groupSize in 1 .. List.length bookCounts ->
+            totalPrice 0.0 groupSize bookCounts ]
+    if prices |> List.isEmpty then
+        0.0
+    else
+        List.min prices
