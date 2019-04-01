@@ -67,50 +67,50 @@ let ``Four of a kind is not a full house`` () =
 let ``Yacht is not a full house`` () =
     score Category.FullHouse [Die.Two; Die.Two; Die.Two; Die.Two; Die.Two] |> should equal 0
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Four of a Kind`` () =
     score Category.FourOfAKind [Die.Six; Die.Six; Die.Four; Die.Six; Die.Six] |> should equal 24
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Yacht can be scored as Four of a Kind`` () =
     score Category.FourOfAKind [Die.Three; Die.Three; Die.Three; Die.Three; Die.Three] |> should equal 12
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Full house is not Four of a Kind`` () =
     score Category.FourOfAKind [Die.Three; Die.Three; Die.Three; Die.Five; Die.Five] |> should equal 0
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Little Straight`` () =
     score Category.LittleStraight [Die.Three; Die.Five; Die.Four; Die.One; Die.Two] |> should equal 30
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Little Straight as Big Straight`` () =
     score Category.BigStraight [Die.One; Die.Two; Die.Three; Die.Four; Die.Five] |> should equal 0
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Four in order but not a little straight`` () =
     score Category.LittleStraight [Die.One; Die.One; Die.Two; Die.Three; Die.Four] |> should equal 0
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``No pairs but not a little straight`` () =
     score Category.LittleStraight [Die.One; Die.Two; Die.Three; Die.Four; Die.Six] |> should equal 0
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Minimum is 1, maximum is 5, but not a little straight`` () =
     score Category.LittleStraight [Die.One; Die.One; Die.Three; Die.Four; Die.Five] |> should equal 0
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Big Straight`` () =
     score Category.BigStraight [Die.Four; Die.Six; Die.Two; Die.Five; Die.Three] |> should equal 30
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Big Straight as little straight`` () =
     score Category.LittleStraight [Die.Six; Die.Five; Die.Four; Die.Three; Die.Two] |> should equal 0
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Choice`` () =
     score Category.Choice [Die.Three; Die.Three; Die.Five; Die.Six; Die.Six] |> should equal 23
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Yacht as choice`` () =
     score Category.Choice [Die.Two; Die.Two; Die.Two; Die.Two; Die.Two] |> should equal 10

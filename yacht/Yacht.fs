@@ -22,7 +22,7 @@ type Die =
     | Five
     | Six
 
-let dieScore = function
+let dieValue = function
     | One -> 1
     | Two -> 2
     | Three -> 3
@@ -30,37 +30,53 @@ let dieScore = function
     | Five -> 5
     | Six -> 6
 
-let scoreDice dice =
-    dice |> List.sumBy dieScore
+type DieCount = { Die:Die; Count:int }
 
-let (|AllDiceSame|_|) (dice:Die list) =
-    match dice with
-    | head :: tail when tail |> List.forall ((=) head) -> Some AllDiceSame
-    | _ -> None
+let dieCounts dice =
+    dice
+    |> List.countBy id
+    |> List.sortByDescending snd
+    |> List.map (fun (die, count) -> { Die = die; Count = count })
 
-let dieCounts dice = dice |> List.countBy id |> List.sortBy snd |> List.map snd
+let yachtScore dice =
+    if dice |> dieCounts |> List.length = 1 then 50 else 0
 
-let (|DiceAreFullHouse|_|) (dice:Die list) =
-    match dieCounts dice with
-    | [ 2; 3 ] -> Some DiceAreFullHouse
-    | _ -> None
+let fourOfAKindScore dice =
+    let firstCount = dice |> dieCounts |> List.head
+    if firstCount.Count >= 4 then dieValue firstCount.Die * 4 else 0
 
-let (|DiceAreFourOfAKind|_|) (dice:Die list) =
-    match dieCounts dice with
-    | [ 1; 4 ] -> Some DiceAreFourOfAKind
-    | _ -> None
+let fullHouseScore dice =
+    let firstCount = dice |> dieCounts |> List.head
+    if firstCount.Count = 3 then dice |> List.sumBy dieValue else 0
 
-let dieCount die dice =
-    dice |> List.filter ((=) die) |> List.length
+let diceAreConsecutiveWithout missing dice =
+    let counts = dice |> dieCounts |> List.map (fun count -> count.Die)
+    List.length counts = 5 && not (dice |> List.contains missing)
+
+let littleStraightScore dice =
+    if dice |> diceAreConsecutiveWithout Six then 30 else 0
+
+let bigStraightScore dice =
+    if dice |> diceAreConsecutiveWithout One then 30 else 0
+
+let choiceScore dice =
+    dice |> List.sumBy dieValue
+
+let singleValueScore die dice =
+    let count = dice |> List.filter ((=) die) |> List.length
+    dieValue die * count
 
 let score category dice =
-    match category, dice with
-    | Yacht, AllDiceSame -> 50
-    | FullHouse, DiceAreFullHouse -> scoreDice dice
-    | Ones, _ -> dice |> dieCount One
-    | Twos, _ -> (dice |> dieCount Two) * 2
-    | Threes, _ -> (dice |> dieCount Three) * 3
-    | Fours, _ -> (dice |> dieCount Four) * 4
-    | Fives, _ -> (dice |> dieCount Five) * 5
-    | Sixes, _ -> (dice |> dieCount Six) * 6
-    | _ -> 0
+    match category with
+    | Yacht -> yachtScore dice
+    | FourOfAKind -> fourOfAKindScore dice
+    | FullHouse -> fullHouseScore dice
+    | LittleStraight -> littleStraightScore dice
+    | BigStraight -> bigStraightScore dice
+    | Choice -> choiceScore dice
+    | Ones -> dice |> singleValueScore One
+    | Twos -> dice |> singleValueScore Two
+    | Threes -> dice |> singleValueScore Three
+    | Fours -> dice |> singleValueScore Four
+    | Fives -> dice |> singleValueScore Five
+    | Sixes -> dice |> singleValueScore Six
