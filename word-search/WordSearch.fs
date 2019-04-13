@@ -1,5 +1,33 @@
 ﻿module WordSearch
 
+let rows matrix = List.length matrix
+let columns matrix = String.length (List.head matrix)
+
+let groupItem item =
+    (item |> List.map fst, item |> List.map snd |> List.toArray |> System.String)
+
+let leftDiagonals matrix =
+    let r = rows matrix
+    let c = columns matrix
+    [ for slice in 0 .. r + c - 2 do
+        let z1 = if slice < c then 0 else slice - c + 1
+        let z2 = if slice < r then 0 else slice - r + 1
+        yield [ for j in slice - z2 .. -1 .. z1 do
+                yield ((slice - j + 1, j + 1), matrix.[j].[slice - j])]]
+    |> List.map groupItem
+
+let rightDiagonals (matrix:string list) =
+    let diagonals =
+        matrix
+        |> List.map (Seq.rev >> Seq.toArray >> System.String)
+        |> leftDiagonals
+
+    let c = columns matrix
+    diagonals
+    |> List.map (fun d ->
+        d |> fst |> List.map (fun (col, row) -> c - (col - 1), row),
+        d |> snd)
+
 let findInRow (word:string) (row:string) =
     match row.IndexOf (word) with
     | -1 ->
@@ -33,14 +61,32 @@ let findInColumns (word:string) (rows:string list) =
     | Some ((y1, x1), (y2, x2)) -> Some ((x1, y1), (x2, y2))
     | None -> None
 
+let findInDiagonals (word:string) (diagonals:(((int * int) list) * string) list) =
+    let matches =
+        diagonals
+        |> List.choose
+            (fun (indexes, str) ->
+                let columns = findInRow word str
+                match columns with
+                | None -> None
+                | Some (y1, y2) ->  Some (indexes.[y1], indexes.[y2]))
+    match matches with
+    | [ ] -> None
+    | first :: _ -> Some first
+
 let findMatch grid word =
     match (grid |> findInRows word) with
-    | Some location ->
-        Some location
+    | Some location -> Some location
     | None ->
         match (grid |> findInColumns word) with
         | Some location -> Some location
-        | None -> None
+        | None ->
+            match (grid |> rightDiagonals |> findInDiagonals word) with
+            | Some location -> Some location
+            | None ->
+                match (grid |> leftDiagonals |> findInDiagonals word) with
+                | Some location -> Some location
+                | None -> None
 
 let search grid (wordsToSearchFor:string list) =
     wordsToSearchFor
