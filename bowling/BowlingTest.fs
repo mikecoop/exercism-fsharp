@@ -15,7 +15,7 @@ let ``Should be able to score a game with all zeros`` () =
     let game = rollMany rolls (newGame())
     score game |> should equal (Some 0)
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Should be able to score a game with no strikes or spares`` () =
     let rolls = [3; 6; 3; 6; 3; 6; 3; 6; 3; 6; 3; 6; 3; 6; 3; 6; 3; 6; 3; 6]
     let game = rollMany rolls (newGame())
@@ -198,4 +198,3 @@ let ``Cannot roll after bonus rolls for strike`` () =
     let startingRolls = rollMany rolls (newGame())
     let game = roll 2 startingRolls
     score game |> should equal None
-
