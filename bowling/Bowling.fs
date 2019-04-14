@@ -7,22 +7,26 @@ type Frame =
 | Open of Roll * Roll
 | Spare of Roll * Roll
 | Strike
+| Invalid
 
-type Game =
-| Active of Active
-| Completed of Completed
-and Active = { Frames: Frame list }
-and Completed = { Frames: Frame List; BonusRolls: Roll list }
+type GameState =
+| Active of Game
+| SpareBonus of Game
+| StrikeBonus of Game
+| Completed of Game
+| Invalid
+and Game = { Frames: Frame List; BonusRolls: Roll list }
 
 let getRolls = function
-    | Open (r1, r2) -> [ r1; r2 ]
-    | Spare (r1, r2) -> [ r1; r2 ]
-    | Strike -> [ Roll 10 ]
+    | Open (Roll r1, Roll r2) -> [ r1; r2 ]
+    | Spare (Roll r1, Roll r2) -> [ r1; r2 ]
+    | Strike -> [ 10 ]
+    | Frame.Invalid -> [ 0 ]
     | Incomplete _ -> failwith "Cannot get rolls from incomplete frame."
 
 let nextFrame (roll:Roll) (previous:Frame option) : Frame =
     if roll < Roll 0 || roll > Roll 10 then
-        failwith "Roll cannot exceed 10 pins."
+        Frame.Invalid
     else
         match previous, roll with
         | Some (Incomplete _ ), Roll 10 ->
@@ -43,32 +47,79 @@ let previousFrames (frames:Frame list) : Frame list =
     | _ ->
         frames
 
-let newGame() : Game = Active { Frames = List.empty }
+let gameFromFrames (frames:Frame list) : Game =
+    { Frames = frames; BonusRolls = List.empty }
 
-let roll (pins:int) (game:Game) : Game =
-    match game with
-    | Active active ->
-        let previousFrame = List.tryHead active.Frames
-        let frame = nextFrame (Roll pins) previousFrame
-        let frames = frame :: previousFrames active.Frames
+let newGame() : GameState = Active (gameFromFrames (List.empty))
+
+let activeGameRoll (roll:Roll) (game:Game) : GameState =
+    let previousFrame = List.tryHead game.Frames
+    let frame = nextFrame roll previousFrame
+    match frame with
+    | Frame.Invalid ->
+        GameState.Invalid
+    | _ ->
+        let frames = frame :: previousFrames game.Frames
         if List.length frames = 10 then
             match frame with
             | Incomplete _ ->
-                Active { Frames = frames }
-            | _ ->
-                Completed { Frames = frames; BonusRolls = List.empty }
+                Active (gameFromFrames (frames))
+            | Spare _ ->
+                SpareBonus (gameFromFrames (frames))
+            | Strike _ ->
+                StrikeBonus (gameFromFrames (frames))
+            | Open _ ->
+                Completed (gameFromFrames (frames))
+            | Frame.Invalid ->
+                GameState.Invalid
         else
-            Active { Frames = frames }
+            Active (gameFromFrames (frames))
+
+let roll (pins:int) (game:GameState) : GameState =
+    let roll = Roll pins
+    match game with
+    | Active active ->
+        activeGameRoll roll active
+    | SpareBonus bonus ->
+        Completed { Frames = bonus.Frames; BonusRolls = [ roll ] }
+    | StrikeBonus bonus ->
+        match bonus.BonusRolls with
+        | [ ] ->
+            StrikeBonus { bonus with BonusRolls = [ roll ] }
+        | _ ->
+            Completed { bonus with BonusRolls = roll :: bonus.BonusRolls }
+    | GameState.Invalid -> GameState.Invalid
     | Completed _ ->
         failwith "Game is already complete."
 
-let score (game:Game) : int option =
+let framesWithRolls (game:Game) =
+    let eightToOne =
+        game.Frames
+        |> List.windowed 3
+        |> List.map List.rev
+        |> List.choose (fun list ->
+            match list with
+            | first :: rest -> Some (first, List.collect getRolls rest)
+            | _ -> None)
+    let lastFrame = List.head game.Frames
+    let bonusRolls = game.BonusRolls |> List.map (fun (Roll r) -> r) |> List.rev
+    let last = (lastFrame, bonusRolls)
+    let secondLastFrame = List.head (game.Frames |> List.skip 1)
+    let secondLast = (secondLastFrame, getRolls lastFrame @ bonusRolls)
+    last :: secondLast :: eightToOne
+
+let frameScores framesWithRolls =
+    framesWithRolls
+    |> List.map (fun (frame, rolls) ->
+        match frame with
+        | Open (Roll roll1, Roll roll2) -> roll1 + roll2
+        | Spare _ -> 10 + (rolls |> List.take 1 |> List.sum)
+        | Strike _ -> 10 + (rolls |> List.take 2 |> List.sum)
+        | _ -> 0)
+
+let score (game:GameState) : int option =
     match game with
     | Completed completed ->
-        let rolls =
-            (completed.BonusRolls |> List.map (fun (Roll r) -> r)) @
-            (List.collect getRolls completed.Frames
-            |> List.map (fun (Roll r) -> r))
-        Some (List.sum rolls)
+        Some (completed |> framesWithRolls |> frameScores |> List.sum)
     | _ ->
-        failwith "Cannot score incomplete game."
+        None
