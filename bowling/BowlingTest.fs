@@ -21,7 +21,7 @@ let ``Should be able to score a game with no strikes or spares`` () =
     let game = rollMany rolls (newGame())
     score game |> should equal (Some 90)
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``A spare followed by zeros is worth ten points`` () =
     let rolls = [6; 4; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0]
     let game = rollMany rolls (newGame())
