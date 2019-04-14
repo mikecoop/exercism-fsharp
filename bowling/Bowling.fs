@@ -86,11 +86,14 @@ let roll (pins:int) (game:GameState) : GameState =
         match bonus.BonusRolls with
         | [ ] ->
             StrikeBonus { bonus with BonusRolls = [ roll ] }
-        | _ ->
+        | [ Roll roll1 ] when
+            (roll1 = 10 || roll1 + pins <= 10) &&
+            (0 < pins && pins <= 10) ->
             Completed { bonus with BonusRolls = roll :: bonus.BonusRolls }
-    | GameState.Invalid -> GameState.Invalid
-    | Completed _ ->
-        failwith "Game is already complete."
+        | _ ->
+            GameState.Invalid
+    | _ ->
+        GameState.Invalid
 
 let framesWithRolls (game:Game) =
     let eightToOne =

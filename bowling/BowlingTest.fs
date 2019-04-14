@@ -121,7 +121,7 @@ let ``Bonus roll after a strike in the last frame cannot score more than 10 poin
     let game = roll 11 startingRolls
     score game |> should equal None
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Two bonus rolls after a strike in the last frame cannot score more than 10 points`` () =
     let rolls = [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 10; 5]
     let startingRolls = rollMany rolls (newGame())
@@ -134,65 +134,65 @@ let ``Two bonus rolls after a strike in the last frame can score more than 10 po
     let game = rollMany rolls (newGame())
     score game |> should equal (Some 26)
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``The second bonus rolls after a strike in the last frame cannot be a strike if the first one is not a strike`` () =
     let rolls = [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 10; 6]
     let startingRolls = rollMany rolls (newGame())
     let game = roll 10 startingRolls
     score game |> should equal None
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Second bonus roll after a strike in the last frame cannot score more than 10 points`` () =
     let rolls = [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 10; 10]
     let startingRolls = rollMany rolls (newGame())
     let game = roll 11 startingRolls
     score game |> should equal None
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``An unstarted game cannot be scored`` () =
     let rolls = []
     let game = rollMany rolls (newGame())
     score game |> should equal None
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``An incomplete game cannot be scored`` () =
     let rolls = [0; 0]
     let game = rollMany rolls (newGame())
     score game |> should equal None
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Cannot roll if game already has ten frames`` () =
     let rolls = [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0]
     let startingRolls = rollMany rolls (newGame())
     let game = roll 0 startingRolls
     score game |> should equal None
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Bonus rolls for a strike in the last frame must be rolled before score can be calculated`` () =
     let rolls = [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 10]
     let game = rollMany rolls (newGame())
     score game |> should equal None
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Both bonus rolls for a strike in the last frame must be rolled before score can be calculated`` () =
     let rolls = [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 10; 10]
     let game = rollMany rolls (newGame())
     score game |> should equal None
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Bonus roll for a spare in the last frame must be rolled before score can be calculated`` () =
     let rolls = [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 7; 3]
     let game = rollMany rolls (newGame())
     score game |> should equal None
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Cannot roll after bonus roll for spare`` () =
     let rolls = [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 7; 3; 2]
     let startingRolls = rollMany rolls (newGame())
     let game = roll 2 startingRolls
     score game |> should equal None
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Cannot roll after bonus rolls for strike`` () =
     let rolls = [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 10; 3; 2]
     let startingRolls = rollMany rolls (newGame())
