@@ -133,7 +133,7 @@ let ``Mixed line length`` () =
           "." ]
     transpose lines |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Square`` () =
     let lines =
         [ "HEART";
@@ -149,7 +149,7 @@ let ``Square`` () =
           "TREND" ]
     transpose lines |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Rectangle`` () =
     let lines =
         [ "FRACTURE";
@@ -167,7 +167,7 @@ let ``Rectangle`` () =
           "EDGE" ]
     transpose lines |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Triangle`` () =
     let lines =
         [ "T";
