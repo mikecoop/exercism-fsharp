@@ -183,6 +183,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "PalindromeProducts", "palin
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ComplexNumbers", "complex-numbers\ComplexNumbers.fsproj", "{BEB08A88-9CA3-40A2-9DA8-1B0662C1980C}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RationalNumbers", "rational-numbers\RationalNumbers.fsproj", "{747B59C7-E873-48E8-AD6F-2BB1EBE016C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -549,6 +551,10 @@ Global
 		{BEB08A88-9CA3-40A2-9DA8-1B0662C1980C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEB08A88-9CA3-40A2-9DA8-1B0662C1980C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEB08A88-9CA3-40A2-9DA8-1B0662C1980C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{747B59C7-E873-48E8-AD6F-2BB1EBE016C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{747B59C7-E873-48E8-AD6F-2BB1EBE016C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{747B59C7-E873-48E8-AD6F-2BB1EBE016C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{747B59C7-E873-48E8-AD6F-2BB1EBE016C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
