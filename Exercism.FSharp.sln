@@ -181,6 +181,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "NthPrime", "nth-prime\NthPr
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "PalindromeProducts", "palindrome-products\PalindromeProducts.fsproj", "{B3045E9A-C0D8-40E4-B783-B92B96C8912E}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ComplexNumbers", "complex-numbers\ComplexNumbers.fsproj", "{BEB08A88-9CA3-40A2-9DA8-1B0662C1980C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -543,6 +545,10 @@ Global
 		{B3045E9A-C0D8-40E4-B783-B92B96C8912E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3045E9A-C0D8-40E4-B783-B92B96C8912E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3045E9A-C0D8-40E4-B783-B92B96C8912E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEB08A88-9CA3-40A2-9DA8-1B0662C1980C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEB08A88-9CA3-40A2-9DA8-1B0662C1980C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEB08A88-9CA3-40A2-9DA8-1B0662C1980C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEB08A88-9CA3-40A2-9DA8-1B0662C1980C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
