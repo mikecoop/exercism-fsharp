@@ -1,21 +1,23 @@
 ﻿module ComplexNumbers
 
-let create real imaginary = failwith "You need to implement this function."
+type ImaginaryNumber = { Real: double; Imaginary: double }
 
-let mul z1 z2 = failwith "You need to implement this function."
+let create real imaginary = { Real = real; Imaginary = imaginary }
 
-let add z1 z2 = failwith "You need to implement this function."
+let mul z1 z2 = { Real = (z1.Real * z2.Real - z1.Imaginary * z2.Imaginary); Imaginary = (z1.Imaginary * z2.Real + z1.Real * z2.Imaginary) }
 
-let sub z1 z2 = failwith "You need to implement this function."
+let add z1 z2 = { Real = z1.Real + z2.Real; Imaginary = z1.Imaginary + z2.Imaginary }
 
-let div z1 z2 = failwith "You need to implement this function."
+let sub z1 z2 = { Real = z1.Real - z2.Real; Imaginary = z1.Imaginary - z2.Imaginary }
 
-let abs z = failwith "You need to implement this function."
+let div z1 z2 = { Real = (z1.Real * z2.Real + z1.Imaginary * z2.Imaginary) / (pown z2.Real 2 + pown z2.Imaginary 2); Imaginary = (z1.Imaginary * z2.Real - z1.Real * z2.Imaginary) / (pown z2.Real 2 + pown z2.Imaginary 2) }
 
-let conjugate z = failwith "You need to implement this function."
+let abs z = sqrt (pown z.Real 2 + pown z.Imaginary 2)
 
-let real z = failwith "You need to implement this function."
+let conjugate z = { Real = z.Real; Imaginary = -z.Imaginary }
 
-let imaginary z = failwith "You need to implement this function."
+let real z = z.Real
 
-let exp z = failwith "You need to implement this function."
+let imaginary z = z.Imaginary
+
+let exp z = { Real = exp z.Real * cos z.Imaginary; Imaginary = sin z.Imaginary }
