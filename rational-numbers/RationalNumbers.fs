@@ -4,6 +4,10 @@ open System
 
 type RationalNumber = { Numerator: int; Denominator: int }
 
+let rec gcd x y =
+    if y = 0 then x
+    else gcd y (x % y)
+
 let negate n = { n with Numerator = -n.Numerator }
 
 let fixSign n =
@@ -27,13 +31,8 @@ let add r1 r2 =
 let sub r1 r2 = add r1 (negate r2)
 
 let reduce r =
-    if r.Numerator % r.Denominator = 0 then
-        { Numerator = r.Numerator / r.Denominator
-          Denominator = 1 }
-    elif r.Denominator % r.Numerator = 0 then
-        { Numerator = 1
-          Denominator = r.Denominator / r.Numerator }
-    else r
+    let div = gcd r.Numerator r.Denominator
+    { Numerator = r.Numerator / div; Denominator = r.Denominator / div }
     |> fixSign
 
 let mul r1 r2 =
