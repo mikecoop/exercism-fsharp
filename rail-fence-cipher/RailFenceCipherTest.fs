@@ -35,14 +35,14 @@ let ``Decode with three rails`` () =
     let expected = "THEDEVILISINTHEDETAILS"
     decode rails msg |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Decode with five rails`` () =
     let rails = 5
     let msg = "EIEXMSMESAORIWSCE"
     let expected = "EXERCISMISAWESOME"
     decode rails msg |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Decode with six rails`` () =
     let rails = 6
     let msg = "133714114238148966225439541018335470986172518171757571896261"

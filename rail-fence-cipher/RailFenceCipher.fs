@@ -28,11 +28,17 @@ let rec splitList acc chunkSizes list =
 
 let decode (rails:int) (message:string) =
     let repeated = repeatedPattern rails message
-    let chunks =
+    let railChunkMap =
         splitList [ ] (repeated |> List.countBy id |> List.map snd) (message |> Seq.toList)
-    chunks
-    |> List.map (List.indexed >> Map.ofList)
-    |> List.mapi (fun index chunk -> index + 1, chunk)
-    |> Map.ofList
+        |> List.mapi (fun index list -> index + 1, list) |> Map.ofList
 
-decode 3 "TEITELHDVLSNHDTISEIIEA"
+    let rec decodeRec acc rep map =
+        match rep with
+        | [ ] -> acc
+        | rail :: restRail ->
+            match Map.tryFind rail map with
+            | Some (char :: restChars) ->
+                let newMap = Map.add rail restChars map
+                decodeRec (char :: acc) restRail newMap
+            | _ -> acc
+    decodeRec [ ] repeated railChunkMap |> List.rev |> List.toArray |> System.String
