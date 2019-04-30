@@ -189,6 +189,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RailFenceCipher", "rail-fen
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BracketPush", "bracket-push\BracketPush.fsproj", "{9720C773-AEA6-43C2-AEA0-677AE4B5B3C4}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Sublist", "sublist\Sublist.fsproj", "{13A4552F-96F0-48DE-952C-99C2F423AABA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -567,6 +569,10 @@ Global
 		{9720C773-AEA6-43C2-AEA0-677AE4B5B3C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9720C773-AEA6-43C2-AEA0-677AE4B5B3C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9720C773-AEA6-43C2-AEA0-677AE4B5B3C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13A4552F-96F0-48DE-952C-99C2F423AABA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13A4552F-96F0-48DE-952C-99C2F423AABA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13A4552F-96F0-48DE-952C-99C2F423AABA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13A4552F-96F0-48DE-952C-99C2F423AABA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
