@@ -191,6 +191,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BracketPush", "bracket-push
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Sublist", "sublist\Sublist.fsproj", "{13A4552F-96F0-48DE-952C-99C2F423AABA}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Change", "change\Change.fsproj", "{FFE4C789-CB25-48CE-B205-E68F014C3DFC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -573,6 +575,10 @@ Global
 		{13A4552F-96F0-48DE-952C-99C2F423AABA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13A4552F-96F0-48DE-952C-99C2F423AABA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13A4552F-96F0-48DE-952C-99C2F423AABA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFE4C789-CB25-48CE-B205-E68F014C3DFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFE4C789-CB25-48CE-B205-E68F014C3DFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFE4C789-CB25-48CE-B205-E68F014C3DFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFE4C789-CB25-48CE-B205-E68F014C3DFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
