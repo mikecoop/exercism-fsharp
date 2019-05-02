@@ -2,18 +2,26 @@
 
 let rec change acc coins target =
     match coins with
-    | [ ] -> acc
+    | [ ] -> [ ]
     | coin :: rest ->
         let remainder = target - coin
+        let newAcc = coin :: acc
         if remainder = 0 then
-            target :: acc
-        elif remainder > 0 then
-            change (target :: acc) rest target
+            newAcc
+        elif remainder < 0 then
+            change acc rest target
+        elif coin <= target then
+            change newAcc coins remainder
         else
-            [ ]
+            change newAcc rest remainder
 
 let findFewestCoins coins target =
-    let bigToSmall = coins |> Seq.rev
-    Some [ 25 ]
-
-change [ ] (List.rev [1; 5; 10; 25; 100]) 25
+    if target = 0 then
+        Some List.empty
+    else
+        let bigToSmall = coins |> List.rev
+        [ for i in 0 .. (List.length bigToSmall) - 1 do
+            yield change [ ] (List.skip i bigToSmall) target ]
+        |> List.where (List.isEmpty >> not)
+        |> List.sortBy List.length
+        |> List.tryHead
